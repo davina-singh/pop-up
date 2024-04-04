@@ -27,10 +27,12 @@ declineButton.addEventListener("click", () => {
 
 // function to check user's previous response - display pop-up if response is no
 function userResponse() {
-  const userResponse = localStorage.getItem("userResponse");
-  if (userResponse !== "yes") {
+  if (localStorage.getItem("userResponse") === "yes") {
+    popUp.classList.add("pop-up-hidden");
+  } else {
     popUpAppear();
   }
 }
-// the pop-up appears on the page after 10 seconds
-popUpAppear();
+
+// the pop-up appears on the page after 10 seconds if the user has not already clicked yes
+userResponse();
