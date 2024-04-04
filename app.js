@@ -16,8 +16,12 @@ acceptButton.addEventListener("click", () => {
 });
 
 declineButton.addEventListener("click", () => {
-  localStorage.setItem("useResponse", "no");
-  popUpAppear();
+  localStorage.setItem("userResponse", "no");
+  popUp.classList.remove("pop-up-visible");
+  popUp.classList.add("pop-up-hidden");
+  setTimeout(() => {
+    popUpAppear();
+  }, 10000);
 });
 
 popUpAppear();
